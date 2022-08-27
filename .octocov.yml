@@ -1,0 +1,21 @@
+coverage:
+  if: true
+codeToTestRatio:
+  code:
+    - '**/*.rb'
+    - '!db/**/*.rb'
+    - '!vendor/**/*.rb'
+    - '!test/**/*.rb'
+  test:
+    - 'test/**/*.rb'
+testExecutionTime:
+  if: true
+diff:
+  datastores:
+    - artifact://${GITHUB_REPOSITORY}
+comment:
+  if: is_pull_request
+report:
+  if: is_default_branch
+  datastores:
+    - artifact://${GITHUB_REPOSITORY}
