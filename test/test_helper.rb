@@ -4,6 +4,12 @@ require 'rails/test_help'
 require "minitest/reporters"
 Minitest::Reporters.use!
 
+if ENV['RAILS_ENV'] == 'test'
+  require 'simplecov'
+  SimpleCov.start 'rails'
+  puts "required simplecov"
+end
+
 class ActiveSupport::TestCase
   # 特定のワーカーではテストをパラレル実行する
   parallelize(workers: :number_of_processors)
