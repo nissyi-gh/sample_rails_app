@@ -51,3 +51,6 @@ jobs:
       env:
         SAMPLE_APP_DATABASE_PASSWORD: postgres
         
+    - name: Run octocov
+      uses: k1LoW/octocov-action@v0
+        
