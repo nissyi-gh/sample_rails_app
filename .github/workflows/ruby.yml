@@ -23,6 +23,15 @@ jobs:
     strategy:
       matrix:
         ruby-version: ['2.7']
+        
+    services:
+      postgres:
+        image: postgres:11
+        env:
+          POSTGRES_USER: sample_app
+          POSTGRES_DB: sample_app_test
+          POSTGRES_PASSWORD: postgres
+        ports: ["5432:5432"]
 
     steps:
     - uses: actions/checkout@v3
